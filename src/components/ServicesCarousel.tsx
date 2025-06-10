@@ -1,77 +1,78 @@
 "use client";
 
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-
-// Import Swiper's required CSS files
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-
-import ServiceCard from './ServiceCard'; // Your existing ServiceCard component
-import { type Service } from '@/data/services'; // The Service type
+import React, { useCallback, useEffect, useState } from 'react';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
+import { Service } from '@/data/services';
+import ServiceCard from './ServiceCard';
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 interface ServicesCarouselProps {
     services: Service[];
 }
 
 export default function ServicesCarousel({ services }: ServicesCarouselProps) {
-    if (!services || services.length === 0) {
-        return <p>No services to display at the moment.</p>;
-    }
+    // 1. Set up Embla with the Autoplay plugin
+    const [emblaRef, emblaApi] = useEmblaCarousel(
+        { loop: services.length > 3, align: 'start' },
+        [Autoplay({ playOnInit: true, delay: 3000, stopOnInteraction: false })]
+    );
 
-    // Only loop if there are enough slides to make it look good
-    const enableLoop = services.length > 3;
+    // 2. State for controlling the dots
+    const [selectedIndex, setSelectedIndex] = useState(0);
+    const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+
+    // 3. Functions to control the carousel
+    const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
+    const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
+    const scrollTo = useCallback((index: number) => emblaApi && emblaApi.scrollTo(index), [emblaApi]);
+
+    // 4. Listen for Embla events to update the dot state
+    useEffect(() => {
+        if (!emblaApi) return;
+
+        const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
+
+        setScrollSnaps(emblaApi.scrollSnapList());
+        emblaApi.on('select', onSelect);
+        onSelect(); // Set initial selected dot
+
+        return () => { emblaApi.off('select', onSelect); };
+    }, [emblaApi]);
 
     return (
-        <div className="w-full">
-            <Swiper
-                // Register the Swiper modules we want to use
-                modules={[Autoplay, Pagination, Navigation]}
-
-                // Responsive settings for how many slides to show
-                slidesPerView={1.1} // Start with showing 1 full and a peek of the next
-                spaceBetween={16}
-                centeredSlides={true}
-                breakpoints={{
-                    // when window width is >= 768px (md)
-                    768: {
-                        slidesPerView: 2.3,
-                        spaceBetween: 24,
-                        centeredSlides: true,
-                    },
-                    // when window width is >= 1024px (lg)
-                    1024: {
-                        slidesPerView: 3,
-                        spaceBetween: 30,
-                        centeredSlides: false, // Not needed when showing full integer slides
-                    },
-                }}
-
-                // Autoplay and Navigation settings
-                loop={enableLoop}
-                autoplay={{
-                    delay: 4500, // Time in ms between slides
-                    disableOnInteraction: false,
-                    pauseOnMouseEnter: true,
-                }}
-                pagination={{
-                    clickable: true, // Allows clicking on dots to navigate
-                    dynamicBullets: true,
-                }}
-                navigation={true} // Shows Next/Prev arrows
-                className="myServicesSwiper pb-16" // Add padding-bottom for pagination dots
-            >
-                {services.map((service, index) => (
-                    <SwiperSlide key={index} className="h-auto self-stretch pb-2">
-                        {/* The h-full div helps ensure cards stretch to the same height */}
-                        <div className="h-full">
+        // The main container for the carousel and its controls
+        <div className="embla">
+            <div className="embla__viewport" ref={emblaRef}>
+                <div className="embla__container">
+                    {services.map((service, index) => (
+                        <div className="embla__slide" key={index}>
                             <ServiceCard service={service} />
                         </div>
-                    </SwiperSlide>
+                    ))}
+                </div>
+            </div>
+
+            {/* Custom Buttons */}
+            <button className="embla__button embla__button--prev" onClick={scrollPrev}>
+                <FiChevronLeft size={30} />
+            </button>
+            <button className="embla__button embla__button--next" onClick={scrollNext}>
+                <FiChevronRight size={30} />
+            </button>
+
+            {/* Custom Dots */}
+            <div className="embla__dots">
+                {scrollSnaps.map((_, index) => (
+                    <button
+                        key={index}
+                        onClick={() => scrollTo(index)}
+                        className={'embla__dot'.concat(
+                            index === selectedIndex ? ' embla__dot--selected' : ''
+                        )}
+                    />
                 ))}
-            </Swiper>
+            </div>
         </div>
     );
 }

@@ -6,11 +6,128 @@
     --color-textPrimary: #ccd6f6;
     --color-textSecondary: #8892b0;
     --color-primary: #64ffda;
-    --color-primaryHover: #52d3b8;
+    --color-primaryHover: #FDE68A;
 }
 
-/* You can still add base styles for the body here if you like */
 body {
     background-color: theme('colors.background');
     color: theme('colors.textPrimary');
+}
+
+/* --- Embla Carousel Styles --- */
+.embla {
+    position: relative;
+    max-width: 72rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 4rem; /* Provides space for the buttons */
+}
+
+.embla__viewport {
+    overflow: hidden;
+}
+
+.embla__container {
+    display: flex;
+    /* Spacing between slides */
+    margin-left: -1rem;
+}
+
+.embla__slide {
+    position: relative;
+    flex: 0 0 33.333%; /* Default for 3 slides */
+    min-width: 0;
+    padding-left: 1rem;
+}
+
+/* Responsive slide widths */
+@media (max-width: 1023px) {
+    .embla__slide {
+        flex: 0 0 50%; /* 2 slides */
+    }
+}
+@media (max-width: 767px) {
+    .embla {
+        padding: 0; /* Remove padding on mobile */
+    }
+    .embla__slide {
+        flex: 0 0 85%; /* 1 slide with peek */
+    }
+}
+
+/* --- Embla Controls --- */
+.embla__button {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+
+    color: #FFF7D4;
+    background-color: #112240;
+    border: 1px solid rgba(255, 247, 212, 0.2);
+    border-radius: 9999px;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.embla__button:hover {
+    background-color: #FFF7D4;
+    color: #0a192f;
+}
+
+.embla__button--prev { left: 0; }
+.embla__button--next { right: 0; }
+
+@media (max-width: 767px) {
+    .embla__button { display: none; }
+}
+
+
+.embla__dots {
+    position: absolute;
+    bottom: -3.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.embla__dot {
+    -webkit-appearance: none;
+    appearance: none;
+    touch-action: manipulation;
+    text-decoration: none;
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    width: 0.75rem;
+    height: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.embla__dot:after {
+    content: '';
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: #8892b0;
+    opacity: 0.5;
+    transition: all 0.2s ease;
+}
+
+.embla__dot--selected:after {
+    background-color: #FFF7D4;
+    opacity: 1;
+    width: 0.75rem; /* Make active dot bigger */
+    height: 0.75rem;
 }

@@ -1,59 +1,53 @@
-// We can add icons later if you want them for each service
-// import { SomeIcon } from 'react-icons/some-set';
-
-import {JSX} from "react";
+import { JSX } from "react";
 
 export type Service = {
     name: string;
-    price: string; // Using string to allow for "Starting at $X" or "Contact for Quote"
-    details: string[]; // An array of strings for bullet points
-    image?: string; // Optional image path from /public
-    icon?: JSX.Element; // Optional icon component
+    price: string;
+    details: string[];
+    image?: string;
+    icon?: string;
 };
 
 export const services: Service[] = [
     {
-        name: "Custom Web Application",
-        price: "Starting at $5,000",
+        name: "Launchpad Portfolio",
+        price: "Starting at $1,500",
         details: [
-            "Full-stack development with Next.js & React.",
-            "Scalable backend APIs.",
-            "Database design and integration.",
-            "User authentication and management.",
+            "Built on the Wix platform for easy user updates.",
+            "Stunning, customized template design.",
+            "Fully mobile-responsive for all devices.",
+            "Basic on-page SEO to get you found.",
         ],
-        image: "/images/services/web-app.jpg", // Example path
+        icon: 'FiBriefcase', // Icon for a professional portfolio
     },
     {
-        name: "AI & Machine Learning Integration",
-        price: "Contact for Quote",
+        name: "E-commerce Quickstart",
+        price: "Starting at $3,000",
         details: [
-            "Integrate AI models into existing applications.",
-            "Custom chatbot development.",
-            "Data analysis and insight generation.",
-            "Workflow automation with AI agents.",
+            "Powered by Shopify's robust platform.",
+            "Payment gateway & shipping configuration.",
+            "Compatible with a wide range of providers."
         ],
-        image: "/images/services/ai-integration.jpg",
+        icon: 'FiShoppingCart', // Icon for e-commerce
     },
     {
-        name: "IoT & Embedded Systems",
-        price: "Project-based",
+        name: "Bespoke Mobile App",
+        price: "Starting at $1,500",
         details: [
-            "Firmware development for embedded devices (C/C++).",
-            "IoT platform connectivity and data pipelines.",
-            "Real-time data processing.",
-            "Hardware and software integration.",
+            "Android only, iOS pending",
+            "Fluid and responsive UI via React Native",
         ],
-        image: "/images/services/iot-systems.jpg",
+        icon: 'FiBriefcase', // Icon for a professional portfolio
     },
     {
-        name: "Game Prototyping & Development",
-        price: "Contact for Quote",
+        name: "Bespoke Website",
+        price: "Starting at $7,000",
         details: [
-            "Interactive 3D simulations with Unity/C#.",
-            "Gameplay mechanics programming.",
-            "AI for NPCs and game logic.",
-            "Cross-platform build deployment.",
+            "Unique design tailored to your brand identity.",
+            "Blazing-fast performance with Next.js.",
+            "Advanced animations & interactions.",
+            "Headless CMS for easy content management.",
         ],
-        image: "/images/services/game-dev.jpg",
+        icon: 'FiAward', // Icon for premium, custom quality
     },
 ];

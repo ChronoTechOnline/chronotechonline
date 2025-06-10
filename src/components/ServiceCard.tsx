@@ -1,17 +1,38 @@
 import React from 'react';
 import Image from 'next/image';
-import { Service } from '@/data/services'; // Import the Service type
+import { Service } from '@/data/services';
 import Link from 'next/link';
+import { IconType } from 'react-icons';
+import { FiBriefcase, FiShoppingCart, FiAward } from 'react-icons/fi';
 
-// This component receives a single 'service' object as a prop
+const iconMap: { [key: string]: IconType } = {
+    FiBriefcase,
+    FiShoppingCart,
+    FiAward,
+};
+
 export default function ServiceCard({ service }: { service: Service }) {
+    // FIX: Add a guard clause to prevent crashing if the service prop is undefined.
+    if (!service) {
+        // This can happen temporarily with some carousel libraries when looping.
+        // Returning null will render nothing and prevent the error.
+        return null;
+    }
+
+    // Look up the icon component from the map.
+    const Icon = service.icon ? iconMap[service.icon] : null;
+
     return (
         <div className="bg-cardBackground rounded-2xl border border-secondary/30 h-full
                     flex flex-col overflow-hidden shadow-lg
                     transition-all duration-300 hover:shadow-primary/20 hover:border-primary/40">
 
-            {/* Optional Image at the top of the card */}
-            {service.image && (
+            {/* Render Icon if the component type exists, otherwise fallback to Image */}
+            {Icon ? (
+                <div className="w-full h-40 flex-shrink-0 flex items-center justify-center bg-background/30">
+                    <Icon className="h-16 w-16 text-primary" />
+                </div>
+            ) : service.image && (
                 <div className="relative w-full h-40 flex-shrink-0">
                     <Image
                         src={service.image}

@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import Header from '@/components/Header'; // <--- IMPORT HEADER
-// import Footer from '@/components/Footer'; // Import Footer when you create it
+import Footer from '@/components/Footer'; // <--- IMPORT FOOTER
 
 export const metadata: Metadata = {
-    title: 'Your Software Business Name',
+    title: 'ChronoTechOnline', // Updated title
     description: 'Custom software solutions for your business.',
 };
 
@@ -15,12 +15,14 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-        <body className="bg-background text-textPrimary">
-        <Header /> {/* <--- ADD HEADER */}
-        <main className="pt-20"> {/* Add padding-top to offset the h-20 header */}
+        {/* The body is now a flex container to push the footer down */}
+        <body className="bg-background text-textPrimary flex flex-col min-h-screen">
+        <Header />
+        {/* The main content area will grow to fill available space */}
+        <main className="flex-grow pt-20">
             {children}
         </main>
-        {/* <Footer /> */} {/* Footer will go here later */}
+        <Footer /> {/* <--- ADDED FOOTER */}
         </body>
         </html>
     );
