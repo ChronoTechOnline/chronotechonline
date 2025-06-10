@@ -1,12 +1,14 @@
 // We can add icons later if you want them for each service
 // import { SomeIcon } from 'react-icons/some-set';
 
+import {JSX} from "react";
+
 export type Service = {
     name: string;
     price: string; // Using string to allow for "Starting at $X" or "Contact for Quote"
     details: string[]; // An array of strings for bullet points
     image?: string; // Optional image path from /public
-    // icon?: JSX.Element; // Optional icon component
+    icon?: JSX.Element; // Optional icon component
 };
 
 export const services: Service[] = [

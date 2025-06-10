@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { type FormEvent } from 'react';
+import Image from "next/image";
 
 export default function ContactPage() {
     const [name, setName] = useState('');
@@ -47,7 +48,22 @@ export default function ContactPage() {
 
     return (
         <main>
-            <div className="container mx-auto max-w-2xl px-6 py-12 md:py-20">
+
+            {/* Background Image & Dark Overlay Layer */}
+            <div className="absolute inset-0 z-0"> {/* Changed z-[-1] to z-0 for stacking context */}
+                <Image
+                    src="/images/HexBanner.png" // <-- YOUR IMAGE PATH HERE
+                    alt="Modern technology background"
+                    layout="fill"
+                    objectFit="cover"
+                    quality={80}
+                    priority // Helps load this important image faster
+                />
+                {/* The Dark Overlay */}
+                <div className="absolute inset-0 bg-background opacity-80"></div>
+            </div>
+
+            <div className="relative z-10 mx-auto max-w-2xl px-6 py-12 md:py-20">
                 <div className="text-center mb-12">
                     <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">Contact Us</h1>
                     <p className="text-lg text-textSecondary">
