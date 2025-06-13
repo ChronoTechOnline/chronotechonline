@@ -1,16 +1,27 @@
-import { getServiceBySlug, getServices, Service } from '@/lib/services';
+import { getServiceBySlug, getServices } from '@/lib/services';
 import { notFound } from 'next/navigation';
 import { FiCheckCircle, FiExternalLink } from 'react-icons/fi';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+// This is the correct, simple type definition for the page's props.
+interface ServicePageProps {
+    params: {
+        slug: string;
+    };
+}
+
+// Use the correct props type here.
+export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
     const service = await getServiceBySlug(params.slug);
+
     if (!service) {
         return {
             title: 'Service Not Found',
+            description: 'The requested service could not be found.'
         }
     }
+
     return {
         title: `${service.name} | ChronoTechOnline`,
         description: service.brief[0],
@@ -24,10 +35,17 @@ export async function generateStaticParams() {
     }));
 }
 
-function ServicePageContent({ service }: { service: Service }) {
+// And use the same correct props type here.
+export default async function ServicePage({ params }: ServicePageProps) {
+    const service = await getServiceBySlug(params.slug);
+
+    if (!service) {
+        notFound();
+    }
+
     return (
         <article className="max-w-4xl mx-auto px-6 py-12 md:py-20 prose prose-invert
-                           prose-headings:text-primary prose-a:text-primary hover:prose-a:text-primaryHover">
+                       prose-headings:text-primary prose-a:text-primary hover:prose-a:text-primaryHover">
 
             <h1 className="text-4xl md:text-5xl font-bold !mb-4">{service.name}</h1>
             <p className="text-2xl text-textSecondary !mt-0">{service.price}</p>
@@ -85,19 +103,11 @@ function ServicePageContent({ service }: { service: Service }) {
                 <Link
                     href="/contact"
                     className="bg-primary text-background font-bold py-3 px-10 rounded-md text-lg
-                           hover:bg-primaryHover transition-colors duration-300 no-underline"
+                       hover:bg-primaryHover transition-colors duration-300 no-underline"
                 >
                     Start a Project
                 </Link>
             </div>
         </article>
-    )
-}
-
-export default async function ServicePage({ params }: { params: { slug: string } }) {
-    const service = await getServiceBySlug(params.slug);
-    if (!service) {
-        notFound();
-    }
-    return <ServicePageContent service={service} />;
+    );
 }
