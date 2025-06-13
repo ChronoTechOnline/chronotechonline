@@ -9,7 +9,7 @@ export default function AboutPage() {
             {/* 1. Page Header */}
             <div className="text-center mb-16">
                 <h1 className="text-4xl md:text-5xl font-bold text-primary">
-                    About ChronoTech
+                    About ChronoTechOnline
                 </h1>
                 <p className="mt-4 text-lg text-textSecondary max-w-2xl mx-auto">
                     We are a forward-thinking software development partner dedicated to crafting exceptional digital solutions that drive progress and innovation.
@@ -74,7 +74,7 @@ export default function AboutPage() {
             <div className="text-center bg-cardBackground p-12 rounded-2xl border border-secondary/30">
                 <h2 className="text-3xl font-bold text-textPrimary">Ready to Build Something Great?</h2>
                 <p className="mt-4 mb-8 text-lg text-textSecondary max-w-2xl mx-auto">
-                    Let's discuss how we can leverage technology to achieve your goals. Reach out to us today for a free consultation.
+                    Let&apos;s discuss how we can leverage technology to achieve your goals. Reach out to us today for a free consultation.
                 </p>
                 <Link
                     href="/contact"

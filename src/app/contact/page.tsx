@@ -43,12 +43,11 @@ export default function ContactPage() {
 
     return (
         <main>
-            {/* The background image that was here has been removed */}
             <div className="mx-auto max-w-2xl px-6 py-12 md:py-20">
                 <div className="text-center mb-12">
                     <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">Contact Us</h1>
                     <p className="text-lg text-textSecondary">
-                        Have a project in mind or a question? We'd love to hear from you.
+                        Have a project in mind or a question? We&apos;d love to hear from you.
                     </p>
                 </div>
 

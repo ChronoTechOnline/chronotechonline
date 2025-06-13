@@ -3,14 +3,13 @@ import Image from "next/image"
 import ServicesCarousel from '@/components/ServicesCarousel';
 import React from 'react';
 import AnimatedHeroBackground from '@/components/AnimatedHeroBackground';
-import { getServices } from '@/lib/services'; // <-- Import the new function
+import { getServices } from '@/lib/services';
 
 export default function HomePage() {
-    const services = getServices(); // <-- Fetch services from markdown files
+    const services = getServices();
 
     return (
         <main>
-            {/* ... (rest of the hero section remains the same) ... */}
             <section className="relative min-h-screen flex items-center justify-center text-center p-8 overflow-hidden">
                 <AnimatedHeroBackground />
                 <div className="relative z-10 max-w-3xl flex flex-col items-center">
@@ -28,7 +27,7 @@ export default function HomePage() {
                         Building Scalable Solutions for the Modern Web
                     </p>
                     <p className="text-lg text-textSecondary mb-10 leading-relaxed">
-                        We specialize in creating high-performance, custom software solutions that drive growth and efficiency for your business. Let's build something great together.
+                        We specialize in creating high-performance, custom software solutions that drive growth and efficiency for your business. Let&apos;s build something great together.
                     </p>
                     <Link
                         href="/contact"

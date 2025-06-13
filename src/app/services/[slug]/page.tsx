@@ -1,26 +1,16 @@
-import { getServiceBySlug, getServices } from '@/lib/services';
+import { getServiceBySlug, getServices, Service } from '@/lib/services';
 import { notFound } from 'next/navigation';
 import { FiCheckCircle, FiExternalLink } from 'react-icons/fi';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
-// Define a type for the page props where params is a Promise, like in your example
-interface ServicePageProps {
-    params: Promise<{ slug: string }>;
-}
-
-export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
-    // Await the params promise to resolve
-    const { slug } = await params;
-    const service = await getServiceBySlug(slug);
-
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+    const service = await getServiceBySlug(params.slug);
     if (!service) {
         return {
             title: 'Service Not Found',
-            description: 'The requested service could not be found.'
         }
     }
-
     return {
         title: `${service.name} | ChronoTechOnline`,
         description: service.brief[0],
@@ -34,27 +24,18 @@ export async function generateStaticParams() {
     }));
 }
 
-export default async function ServicePage({ params }: ServicePageProps) {
-    // The FIX: Await the params promise to get the slug value
-    const { slug } = await params;
-    const service = await getServiceBySlug(slug);
-
-    if (!service) {
-        notFound();
-    }
-
+function ServicePageContent({ service }: { service: Service }) {
     return (
         <article className="max-w-4xl mx-auto px-6 py-12 md:py-20 prose prose-invert
-                       prose-headings:text-primary prose-a:text-primary hover:prose-a:text-primaryHover">
+                           prose-headings:text-primary prose-a:text-primary hover:prose-a:text-primaryHover">
 
             <h1 className="text-4xl md:text-5xl font-bold !mb-4">{service.name}</h1>
             <p className="text-2xl text-textSecondary !mt-0">{service.price}</p>
 
             <div className="my-8" dangerouslySetInnerHTML={{ __html: service.content }} />
 
-            {/* What's Included Section */}
             <div className="mt-12 p-6 bg-cardBackground border border-secondary/30 rounded-lg">
-                <h2 className="text-2xl font-bold !mt-0">What's Included</h2>
+                <h2 className="text-2xl font-bold !mt-0">What&apos;s Included</h2>
                 <ul className="mt-4 space-y-2 !p-0">
                     {service.brief.map((item, index) => (
                         <li key={index} className="flex items-start !p-0">
@@ -65,7 +46,6 @@ export default async function ServicePage({ params }: ServicePageProps) {
                 </ul>
             </div>
 
-            {/* Add-ons Section */}
             {service.addOns && service.addOns.length > 0 && (
                 <div className="mt-8 p-6 bg-cardBackground border border-secondary/30 rounded-lg">
                     <h2 className="text-2xl font-bold !mt-0">Popular Add-ons</h2>
@@ -80,7 +60,6 @@ export default async function ServicePage({ params }: ServicePageProps) {
                 </div>
             )}
 
-            {/* Examples Section */}
             {service.examples && service.examples.length > 0 && (
                 <div className="mt-8 p-6 bg-cardBackground border border-secondary/30 rounded-lg">
                     <h2 className="text-2xl font-bold !mt-0">Live Examples</h2>
@@ -106,11 +85,19 @@ export default async function ServicePage({ params }: ServicePageProps) {
                 <Link
                     href="/contact"
                     className="bg-primary text-background font-bold py-3 px-10 rounded-md text-lg
-                       hover:bg-primaryHover transition-colors duration-300 no-underline"
+                           hover:bg-primaryHover transition-colors duration-300 no-underline"
                 >
-                    Contact Us!
+                    Start a Project
                 </Link>
             </div>
         </article>
-    );
+    )
+}
+
+export default async function ServicePage({ params }: { params: { slug: string } }) {
+    const service = await getServiceBySlug(params.slug);
+    if (!service) {
+        notFound();
+    }
+    return <ServicePageContent service={service} />;
 }
