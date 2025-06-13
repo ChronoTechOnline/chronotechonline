@@ -12,10 +12,11 @@ type NavLinkItem = {
     href: string;
 };
 
+// Updated the navLinks array
 const navLinks: NavLinkItem[] = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
-    { name: "Our Work", href: "/work" },
+    { name: "Services", href: "/services" }, // Was "Our Work"
     { name: "Contact", href: "/contact" },
 ];
 

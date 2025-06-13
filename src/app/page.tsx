@@ -1,38 +1,26 @@
 import Link from 'next/link';
 import Image from "next/image"
-import { services } from '@/data/services'; // <--- IMPORT SERVICES DATA
-import ServicesCarousel from '@/components/ServicesCarousel'; // <--- IMPORT CAROUSEL
+import ServicesCarousel from '@/components/ServicesCarousel';
 import React from 'react';
+import AnimatedHeroBackground from '@/components/AnimatedHeroBackground';
+import { getServices } from '@/lib/services'; // <-- Import the new function
 
 export default function HomePage() {
+    const services = getServices(); // <-- Fetch services from markdown files
+
     return (
-        <main className="bg-background text-textPrimary">
-            {/* ===== HERO SECTION FOR BUSINESS SITE ===== */}
-            <section className="relative min-h-screen flex items-center justify-center text-center p-8">
-
-                {/* Background Image & Dark Overlay Layer */}
-                <div className="absolute inset-0 z-0"> {/* Changed z-[-1] to z-0 for stacking context */}
+        <main>
+            {/* ... (rest of the hero section remains the same) ... */}
+            <section className="relative min-h-screen flex items-center justify-center text-center p-8 overflow-hidden">
+                <AnimatedHeroBackground />
+                <div className="relative z-10 max-w-3xl flex flex-col items-center">
                     <Image
-                        src="/images/HexBanner.png" // <-- YOUR IMAGE PATH HERE
-                        alt="Modern technology background"
-                        layout="fill"
-                        objectFit="cover"
-                        quality={80}
-                        priority // Helps load this important image faster
+                        src="/images/ChronoTechCircle.png"
+                        alt="ChronoTech Logo"
+                        width={1080}
+                        height={1080}
+                        className="h-80 w-80 mb-6"
                     />
-                    {/* The Dark Overlay */}
-                    <div className="absolute inset-0 bg-background opacity-80"></div>
-                </div>
-
-                {/* Content Layer */}
-                <div className="relative z-10 max-w-3xl flex flex-col items-center"> {/* z-10 ensures content is above background */}
-                <Image
-                    src="/images/ChronoTechCircle.png" // Path to your logo
-                    alt="ChronoTech Logo"
-                    width={1080} // A larger size for the hero section
-                    height={1080}
-                    className="h-80 w-80 mb-6" // Center the logo and add margin below it
-                />
                     <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
                         Your Innovative Software Partner
                     </h1>
@@ -43,7 +31,7 @@ export default function HomePage() {
                         We specialize in creating high-performance, custom software solutions that drive growth and efficiency for your business. Let's build something great together.
                     </p>
                     <Link
-                        href="/contact" // Will point to the future Contact Us page
+                        href="/contact"
                         className="bg-primary text-background font-bold py-3 px-10 rounded-md text-lg
                        hover:bg-primaryHover transition-colors duration-300"
                     >
@@ -52,21 +40,15 @@ export default function HomePage() {
                 </div>
             </section>
 
-
-        {/* Services Section */}
-        <section id="services" className="py-20 md:py-28 bg-cardBackground">
-          {/* Using a wider container for the carousel */}
-          <div className="container mx-auto max-w-7xl px-6 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
-            <p className="text-lg text-textSecondary mb-12 max-w-2xl mx-auto">
-              We offer a range of services designed to bring your ideas to life with precision and innovation.
-            </p>
-
-            {/* REPLACE THE PLACEHOLDER WITH THE CAROUSEL COMPONENT */}
-            <ServicesCarousel services={services} />
-
-          </div>
-        </section>
-      </main>
-  );
+            <section id="services" className="py-20 md:py-28 bg-cardBackground">
+                <div className="container mx-auto max-w-7xl px-6 text-center">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
+                    <p className="text-lg text-textSecondary mb-12 max-w-2xl mx-auto">
+                        We offer a range of services designed to bring your ideas to life with precision and innovation.
+                    </p>
+                    <ServicesCarousel services={services} />
+                </div>
+            </section>
+        </main>
+    );
 }

@@ -27,7 +27,7 @@ export default function Footer() {
             <div className="container mx-auto px-6 py-8">
                 <div className="flex flex-col items-center justify-between md:flex-row gap-6">
                     <div className="text-center md:text-left">
-                        <p className="text-lg font-semibold text-textPrimary">ChronoTechOnline</p>
+                        <p className="text-lg font-semibold text-textPrimary">ChronoTech</p>
                         <p className="text-sm text-textSecondary">
                             &copy; {currentYear} ChronoTechOnline. All rights reserved.
                         </p>

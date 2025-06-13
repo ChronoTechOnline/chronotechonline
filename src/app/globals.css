@@ -131,3 +131,10 @@ body {
     width: 0.75rem; /* Make active dot bigger */
     height: 0.75rem;
 }
+
+.noselect {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE / Edge */
+    user-select: none;         /* Standard */
+}
