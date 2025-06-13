@@ -5,28 +5,28 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { FiMenu, FiX } from 'react-icons/fi';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, Variants } from 'framer-motion'; // <-- Import Variants type
 
 type NavLinkItem = {
     name: string;
     href: string;
 };
 
-// Updated the navLinks array
 const navLinks: NavLinkItem[] = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
-    { name: "Services", href: "/services" }, // Was "Our Work"
+    { name: "Services", href: "/services" },
     { name: "Contact", href: "/contact" },
 ];
 
-const drawerVariants = {
+// FIX: Explicitly type the constant with the 'Variants' type
+const drawerVariants: Variants = {
     hidden: { x: "100%" },
     visible: { x: 0, transition: { type: "spring", stiffness: 300, damping: 30 } },
     exit: { x: "100%", transition: { type: "tween", ease: "easeIn", duration: 0.2 } },
 };
 
-const overlayVariants = {
+const overlayVariants: Variants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { duration: 0.2 } },
     exit: { opacity: 0, transition: { duration: 0.2, delay: 0.1 } },
@@ -68,13 +68,13 @@ export default function Header() {
                             className="inline-flex items-center gap-3 text-xl font-bold text-textPrimary hover:text-primary transition-colors"
                         >
                             <Image
-                                src="/images/ChronoTechCircle.png" // Path to your logo in the public folder
+                                src="/images/ChronoTechCircle.png"
                                 alt="Your Business Name Logo"
-                                width={32} // Adjust size as needed
+                                width={32}
                                 height={32}
-                                className="h-8 w-8" // Tailwind size classes
+                                className="h-8 w-8"
                             />
-                            ChronoTechOnline {/* <-- Replace with your business name */}
+                            ChronoTechOnline
                         </Link>
 
                         <nav className="hidden md:flex items-center space-x-8">

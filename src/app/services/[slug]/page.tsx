@@ -1,4 +1,4 @@
-import { getServiceBySlug, getServices, Service } from '@/lib/services';
+import { getServiceBySlug, getServices } from '@/lib/services';
 import { notFound } from 'next/navigation';
 import { FiCheckCircle, FiExternalLink } from 'react-icons/fi';
 import Link from 'next/link';
