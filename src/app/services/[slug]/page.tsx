@@ -1,19 +1,19 @@
-import { getServiceBySlug, getServices } from '@/lib/services';
+import { getServiceBySlug, getServices, Service } from '@/lib/services';
 import { notFound } from 'next/navigation';
 import { FiCheckCircle, FiExternalLink } from 'react-icons/fi';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
-// This is the correct, simple type definition for the page's props.
+// FIX: Define the props type where `params` is a Promise.
+// This matches the type constraint from the build error.
 interface ServicePageProps {
-    params: {
-        slug: string;
-    };
+    params: Promise<{ slug: string }>;
 }
 
-// Use the correct props type here.
 export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
-    const service = await getServiceBySlug(params.slug);
+    // FIX: Await the params promise to resolve the object, then get the slug.
+    const { slug } = await params;
+    const service = await getServiceBySlug(slug);
 
     if (!service) {
         return {
@@ -35,9 +35,10 @@ export async function generateStaticParams() {
     }));
 }
 
-// And use the same correct props type here.
 export default async function ServicePage({ params }: ServicePageProps) {
-    const service = await getServiceBySlug(params.slug);
+    // FIX: Await the params promise to resolve the object.
+    const { slug } = await params;
+    const service = await getServiceBySlug(slug);
 
     if (!service) {
         notFound();
