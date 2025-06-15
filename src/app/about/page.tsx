@@ -9,10 +9,10 @@ export default function AboutPage() {
             {/* 1. Page Header */}
             <div className="text-center mb-16">
                 <h1 className="text-4xl md:text-5xl font-bold text-primary">
-                    About ChronoTechOnline
+                    About ChronoTech
                 </h1>
                 <p className="mt-4 text-lg text-textSecondary max-w-2xl mx-auto">
-                    We are a forward-thinking software development partner dedicated to crafting exceptional digital solutions that drive progress and innovation.
+                    {` From concept to launch, our development process is fueled by innovation. We are your dedicated partner in crafting exceptional and progressive digital experiences. `}
                 </p>
             </div>
 
@@ -21,16 +21,16 @@ export default function AboutPage() {
                 <div className="w-full md:w-1/2">
                     <h2 className="text-3xl font-bold text-textPrimary mb-4">Our Mission</h2>
                     <p className="text-textSecondary leading-relaxed mb-4">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        {` Our mission is to translate our partners' creative visions into the digital landscape. We use modern, robust technologies to build the exceptional tools that drive their progress. `}
                     </p>
                     <p className="text-textSecondary leading-relaxed">
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        {` As a solo developer, the top priority is bringing your ideas to life with superior quality, ensuring your satisfaction through a process built on direct and transparent communication. `}
                     </p>
                 </div>
                 <div className="w-full md:w-1/2">
                     {/* Note: You will need to add an image at this path or update it */}
                     <Image
-                        src="/images/about-placeholder.jpg"
+                        src="/images/Atlanta.png"
                         alt="A placeholder image representing the team or office"
                         width={600}
                         height={400}

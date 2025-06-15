@@ -8,9 +8,9 @@ export default function AnimatedHeroBackground() {
         <motion.div
             className="absolute inset-0 z-0"
             initial={{ scale: 1 }} // The animation starts at 100% scale
-            animate={{ scale: 1.2 }} // It animates a single time to 105%
+            animate={{ scale: 1.5 }} // It animates a single time to 105%
             transition={{
-                duration: 3, // A slow, 10-second animation duration
+                duration: 7, // A slow, 10-second animation duration
                 ease: "easeOut", // The animation will slow down towards the end
             }}
         >

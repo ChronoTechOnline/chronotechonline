@@ -9,7 +9,8 @@ export default function HomePage() {
     const services = getServices();
 
     return (
-        <main>
+        // FIX: Add 'overflow-x-hidden' to the main container
+        <main className="overflow-x-hidden">
             <section className="relative min-h-screen flex items-center justify-center text-center p-8 overflow-hidden">
                 <AnimatedHeroBackground />
                 <div className="relative z-10 max-w-3xl flex flex-col items-center">
@@ -18,7 +19,7 @@ export default function HomePage() {
                         alt="ChronoTech Logo"
                         width={1080}
                         height={1080}
-                        className="h-80 w-80 mb-6"
+                        className="h-60 w-60 md:h-80 md:w-80 mb-6"
                     />
                     <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
                         Your Innovative Software Partner

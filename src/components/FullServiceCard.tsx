@@ -1,12 +1,18 @@
 import Link from 'next/link';
 import { IconType } from 'react-icons';
-import { FiBriefcase, FiShoppingCart, FiAward, FiArrowRight } from 'react-icons/fi';
+import { FiArrowRight } from 'react-icons/fi';
 import { Service } from '@/lib/services';
+import { RiShoppingCartLine } from 'react-icons/ri';
+import { AiOutlineMobile } from 'react-icons/ai';
+import { LuLaptopMinimal } from 'react-icons/lu';
+import { GiWingedSword } from 'react-icons/gi';
 
+// Add the new FiSmartphone icon to the map
 const iconMap: { [key: string]: IconType } = {
-    FiBriefcase,
-    FiShoppingCart,
-    FiAward,
+    RiShoppingCartLine,
+    AiOutlineMobile,
+    LuLaptopMinimal,
+    GiWingedSword,
 };
 
 export default function FullServiceCard({ service }: { service: Service }) {

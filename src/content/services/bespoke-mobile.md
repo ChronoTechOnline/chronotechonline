@@ -2,7 +2,8 @@
 name: "Bespoke Mobile"
 slug: "bespoke-mobile"
 price: "Starting at $15,000 - $40,000"
-icon: "FiAward"
+icon: "AiOutlineMobile"
+order: 4
 brief:
   - "Android only, iOS pending"
   - "Developed entirely from scratch using React Native to deliver a seamless and engaging user experience."

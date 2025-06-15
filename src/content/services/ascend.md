@@ -2,7 +2,8 @@
 name: "Ascend"
 slug: "ascend"
 price: "Starting at $2,000 - $4,000"
-icon: "FiBriefcase"
+icon: "GiWingedSword"
+order: 1
 brief:
   - "Built on the Wix platform for easy user updates."
   - "Stunning, customized template design."

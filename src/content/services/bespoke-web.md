@@ -2,7 +2,8 @@
 name: "Bespoke Web"
 slug: "bespoke-web"
 price: "Starting at $15,000 - $20,000"
-icon: "FiAward"
+icon: "LuLaptopMinimal"
+order: 3
 brief:
   - "Unique design tailored to your brand identity."
   - "Custom coded from the ground up using React"

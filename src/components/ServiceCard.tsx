@@ -1,25 +1,28 @@
 import React from 'react';
 import Link from 'next/link';
 import { IconType } from 'react-icons';
-import { FiBriefcase, FiShoppingCart, FiAward } from 'react-icons/fi';
 import { Service } from '@/lib/services';
+import { RiShoppingCartLine } from 'react-icons/ri';
+import { AiOutlineMobile } from 'react-icons/ai';
+import { LuLaptopMinimal } from 'react-icons/lu';
+import { GiWingedSword } from 'react-icons/gi';
 
+// Add the new FiSmartphone icon to the map
 const iconMap: { [key: string]: IconType } = {
-    FiBriefcase,
-    FiShoppingCart,
-    FiAward,
+    RiShoppingCartLine,
+    AiOutlineMobile,
+    LuLaptopMinimal,
+    GiWingedSword,
 };
 
 export default function ServiceCard({ service }: { service: Service }) {
     if (!service || !service.slug) {
-        // Return null if the service or its slug is missing to prevent errors
         return null;
     }
 
     const Icon = service.icon ? iconMap[service.icon] : null;
 
     return (
-        // The entire card is now wrapped in a Link component
         <Link
             href={`/services/${service.slug}`}
             className="group block h-full transition-all duration-300"
@@ -43,14 +46,12 @@ export default function ServiceCard({ service }: { service: Service }) {
                         {service.price}
                     </p>
 
-                    {/* Now using the 'brief' field for details */}
                     <ul className="space-y-2 text-textSecondary list-disc list-inside mb-6">
                         {service.brief.map((detail, index) => (
                             <li key={index}>{detail}</li>
                         ))}
                     </ul>
 
-                    {/* The "Learn More" button is now just a styled div */}
                     <div className="mt-auto pt-4">
                         <div
                             className="inline-block w-full text-center bg-secondary/50 text-primary font-semibold

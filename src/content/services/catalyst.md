@@ -2,7 +2,8 @@
 name: "Catalyst"
 slug: "catalyst"
 price: "Starting at $3,500 - $10,000+"
-icon: "FiShoppingCart"
+icon: "RiShoppingCartLine"
+order: 2
 brief:
   - "Powered by Shopify's robust platform."
   - "Payment gateway & shipping configuration."
