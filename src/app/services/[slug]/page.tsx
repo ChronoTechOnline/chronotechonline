@@ -1,6 +1,7 @@
 import { getServiceBySlug, getServices } from '@/lib/services';
 import { notFound } from 'next/navigation';
 import { FiCheckCircle, FiExternalLink } from 'react-icons/fi';
+import { PiPuzzlePieceDuotone } from "react-icons/pi";
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -71,7 +72,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                     <ul className="mt-4 space-y-2 !p-0">
                         {service.addOns.map((item, index) => (
                             <li key={index} className="flex items-start !p-0">
-                                <FiCheckCircle className="text-primary h-6 w-6 mr-3 mt-1 flex-shrink-0" />
+                                <PiPuzzlePieceDuotone className="text-primary h-6 w-6 mr-3 mt-1 flex-shrink-0" />
                                 <span>{item}</span>
                             </li>
                         ))}

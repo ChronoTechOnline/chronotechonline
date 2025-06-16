@@ -15,7 +15,7 @@ export default function HomePage() {
                 <AnimatedHeroBackground />
                 <div className="relative z-10 max-w-3xl flex flex-col items-center">
                     <Image
-                        src="/images/ChronoTechCircle.png"
+                        src="/images/ChronoTechLogo.png"
                         alt="ChronoTech Logo"
                         width={1080}
                         height={1080}

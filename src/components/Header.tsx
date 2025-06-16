@@ -68,7 +68,7 @@ export default function Header() {
                             className="inline-flex items-center gap-3 text-xl font-bold text-textPrimary hover:text-primary transition-colors"
                         >
                             <Image
-                                src="/images/ChronoTechCircle.png"
+                                src="/images/ChronoTechLogo.png"
                                 alt="Your Business Name Logo"
                                 width={32}
                                 height={32}
