@@ -1,21 +1,16 @@
 import React from 'react';
-import { FiGithub, FiLinkedin, FiTwitter } from 'react-icons/fi';
+import { FiGithub, FiLinkedin } from 'react-icons/fi';
 
 const socialLinks = [
     {
         name: 'GitHub',
         icon: <FiGithub size={24} />,
-        href: 'https://github.com', // Replace with your actual link
+        href: 'https://github.com/chronotechonline', // Replace with your actual link
     },
     {
         name: 'LinkedIn',
         icon: <FiLinkedin size={24} />,
-        href: 'https://linkedin.com', // Replace with your actual link
-    },
-    {
-        name: 'Twitter',
-        icon: <FiTwitter size={24} />,
-        href: 'https://twitter.com', // Replace with your actual link
+        href: 'https://linkedin.com/in/kevinxlopez', // Replace with your actual link
     },
 ];
 
@@ -32,20 +27,20 @@ export default function Footer() {
                             &copy; {currentYear} ChronoTechOnline. All rights reserved.
                         </p>
                     </div>
-                    {/*<div className="flex space-x-6">*/}
-                    {/*    {socialLinks.map((social) => (*/}
-                    {/*        <a*/}
-                    {/*            key={social.name}*/}
-                    {/*            href={social.href}*/}
-                    {/*            target="_blank"*/}
-                    {/*            rel="noopener noreferrer"*/}
-                    {/*            aria-label={social.name}*/}
-                    {/*            className="text-textSecondary hover:text-primary transition-colors"*/}
-                    {/*        >*/}
-                    {/*            {social.icon}*/}
-                    {/*        </a>*/}
-                    {/*    ))}*/}
-                    {/*</div>*/}
+                    <div className="flex space-x-6">
+                        {socialLinks.map((social) => (
+                            <a
+                                key={social.name}
+                                href={social.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={social.name}
+                                className="text-textSecondary hover:text-primary transition-colors"
+                            >
+                                {social.icon}
+                            </a>
+                        ))}
+                    </div>
                 </div>
             </div>
         </footer>
