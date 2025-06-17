@@ -1,7 +1,7 @@
 ---
 name: "Ascend"
 slug: "ascend"
-price: "Starting at $2,000 - $4,000"
+price: "Starting at $500"
 icon: "GiWingedSword"
 order: 1
 brief:
@@ -9,15 +9,25 @@ brief:
   - "Stunning, customized template design."
   - "Create a fully mobile-responsive online presence."
   - "Perfect for individuals and new businesses to showcase their work and contact information."
+  - "Branded Header"
+  - "Image Gallery"
+  - "Contact Info/Socials Section"
+  - "Branded Footer"
 addOns:
-  - "Blog setup and design: +$300"
-  - "Additional page design: +$150/page"
-  - "Advanced contact forms: +$100"
+  - "Additional static pages: +$200/page"
+  - "Additional dynamic pages: +$750/page"
+  - "Contact Form: +$300"
+  - "Wix Chat Plugin: +$125"
+  - "Wix Restaurant Plugin: +$500"
+  - "Wix Bookings Plugin: +$1,000"
+  - "Wix Members Plugin: +$500"
+  - "Wix Premium/Custom Domain: Contact"
+  - "1-Year Maintenance: $500-$5,000/year"
 examples:
-  - name: "Example Portfolio Site"
-    url: "https://www.google.com"
+  - name: "Swirl Cafe"
+    url: "https://chronotechonline.wixsite.com/swirl-cafe"
 ---
 
-Our **Ascend Portfolio** is the perfect solution for individuals and small businesses looking to establish a professional and elegant online presence without the complexity of custom code. We leverage the power and flexibility of the Wix platform to create a site that you can easily manage and update yourself.
+Our **Ascend Site** comes standard as a 1-page static Wix website that includes a Logo, Headers, Footer, Gallery, and a Contact Info Section.
 
-We begin by understanding your brand and aesthetic, then select and customize a premium template to match your vision. The result is a beautiful, fast, and reliable portfolio that looks great on any device.
+Add-ons are available and priced based on complexity and are not limited to the ones listed here.

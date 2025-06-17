@@ -17,9 +17,9 @@ export default function HomePage() {
                     <Image
                         src="/images/ChronoTechLogo.png"
                         alt="ChronoTech Logo"
-                        width={1080}
-                        height={1080}
-                        className="h-60 w-60 md:h-80 md:w-80 mb-6"
+                        width={1440}
+                        height={1440}
+                        className="h-60 w-60 md:h-96 md:w-96 mb-6"
                     />
                     <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
                         Your Innovative Software Partner

@@ -32,20 +32,20 @@ export default function Footer() {
                             &copy; {currentYear} ChronoTechOnline. All rights reserved.
                         </p>
                     </div>
-                    <div className="flex space-x-6">
-                        {socialLinks.map((social) => (
-                            <a
-                                key={social.name}
-                                href={social.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label={social.name}
-                                className="text-textSecondary hover:text-primary transition-colors"
-                            >
-                                {social.icon}
-                            </a>
-                        ))}
-                    </div>
+                    {/*<div className="flex space-x-6">*/}
+                    {/*    {socialLinks.map((social) => (*/}
+                    {/*        <a*/}
+                    {/*            key={social.name}*/}
+                    {/*            href={social.href}*/}
+                    {/*            target="_blank"*/}
+                    {/*            rel="noopener noreferrer"*/}
+                    {/*            aria-label={social.name}*/}
+                    {/*            className="text-textSecondary hover:text-primary transition-colors"*/}
+                    {/*        >*/}
+                    {/*            {social.icon}*/}
+                    {/*        </a>*/}
+                    {/*    ))}*/}
+                    {/*</div>*/}
                 </div>
             </div>
         </footer>
