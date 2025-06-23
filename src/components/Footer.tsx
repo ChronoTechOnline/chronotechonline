@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link'
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
 
 const socialLinks = [
@@ -27,6 +28,9 @@ export default function Footer() {
                             &copy; {currentYear} ChronoTechOnline. All rights reserved.
                         </p>
                     </div>
+                    <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-textSecondary">
+                        <Link href="/privacy/chronotech-policy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+                    </nav>
                     <div className="flex space-x-6">
                         {socialLinks.map((social) => (
                             <a
