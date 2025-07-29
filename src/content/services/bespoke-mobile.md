@@ -11,6 +11,7 @@ addOns:
   - "Add ons pending. Please contact."
 examples:
   - name: "CafeCalc (Google Play pending)"
+    url: "https://play.google.com/store/apps/details?id=com.chronotech.CafeCalc"
   - name: "StellarDex (Google Play pending)"
 
 ---
