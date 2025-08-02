@@ -58,6 +58,15 @@ export default function Header() {
         };
     }, [isMobileMenuOpen]);
 
+    const getLinkClassNames = (linkHref: string) => {
+            let isActive = pathname === linkHref;
+        return {
+            desktop: `px-3 py-2 text-lg transition-colors text-center ${isActive ? 'text-cyan-400 font-semibold border-b-2 border-cyan-400' : 'text-gray-300 hover:text-cyan-400'}`,
+            mobileButton: `w-full flex items-center justify-center rounded-2xl px-4 py-3 text-lg transition-all duration-200 ease-in-out transform ${isActive ? 'bg-cyan-500 text-white font-semibold shadow-md scale-105' : 'text-cyan-200 bg-gray-700/40 hover:bg-gray-600/80 hover:text-white hover:scale-[1.03]'}`
+        };
+    };
+
+
     return (
         <>
             <header className="fixed top-0 left-0 right-0 z-30 bg-background/80 backdrop-blur-md shadow-md">
@@ -107,7 +116,7 @@ export default function Header() {
                     <>
                         <motion.div
                             key="mobile-overlay"
-                            className="fixed inset-0 bg-background/60 backdrop-blur-sm z-20"
+                            className="fixed inset-0 bg-background/60 backdrop-blur-sm z-40"
                             variants={overlayVariants}
                             initial="hidden"
                             animate="visible"
@@ -116,28 +125,21 @@ export default function Header() {
                         />
                         <motion.div
                             key="mobile-drawer"
-                            className="fixed top-0 right-0 h-full w-4/5 max-w-sm bg-cardBackground shadow-2xl z-40 flex flex-col"
+                            className="fixed top-20 right-0 w-4/5 max-w-xs bg-cardBackground shadow-2xl p-4 z-50
+                         flex flex-col rounded-l-2xl
+                         max-h-[calc(100vh-5rem-2rem)] overflow-y-auto"
                             variants={drawerVariants}
                             initial="hidden"
                             animate="visible"
                             exit="hidden"
                         >
-                            <div className="p-6 flex justify-end">
-                                <button onClick={toggleMobileMenu} aria-label="Close menu" className="text-textSecondary hover:text-primary transition-colors">
-                                    <FiX size={30} />
-                                </button>
-                            </div>
-                            <nav className="flex flex-col space-y-4 px-6">
+                            <nav className="flex flex-col space-y-3 flex-shrink-0">
                                 {navLinks.map((link) => (
                                     <Link
                                         key={link.name}
                                         href={link.href}
                                         onClick={toggleMobileMenu}
-                                        className={`text-2xl font-semibold p-4 rounded-lg transition-colors ${
-                                            pathname === link.href
-                                                ? 'text-background bg-primary'
-                                                : 'text-textPrimary hover:bg-primary/10'
-                                        }`}
+                                        className={getLinkClassNames(link.href).mobileButton}
                                     >
                                         {link.name}
                                     </Link>
