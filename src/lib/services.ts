@@ -8,6 +8,7 @@ export interface Service {
     name: string;
     price: string;
     icon?: string;
+    image?: string;
     order: number; // Added order property
     brief: string[];
     addOns?: string[];
