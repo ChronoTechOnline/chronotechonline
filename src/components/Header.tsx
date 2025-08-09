@@ -59,7 +59,7 @@ export default function Header() {
     }, [isMobileMenuOpen]);
 
     const getLinkClassNames = (linkHref: string) => {
-            let isActive = pathname === linkHref;
+            const isActive = pathname === linkHref;
         return {
             desktop: `px-3 py-2 text-lg transition-colors text-center ${isActive ? 'text-cyan-400 font-semibold border-b-2 border-cyan-400' : 'text-gray-300 hover:text-cyan-400'}`,
             mobileButton: `w-full flex items-center justify-center rounded-2xl px-4 py-3 text-lg transition-all duration-200 ease-in-out transform ${isActive ? 'bg-cyan-500 text-white font-semibold shadow-md scale-105' : 'text-cyan-200 bg-gray-700/40 hover:bg-gray-600/80 hover:text-white hover:scale-[1.03]'}`
