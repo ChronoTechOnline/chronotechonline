@@ -62,7 +62,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                         <label htmlFor="message" className="block text-sm font-medium text-textSecondary mb-2">Message</label>
-                        <textarea id="message" name="message" rows={6} value={message} onChange={(e) => setMessage(e.target.value)} required className="block w-full px-4 py-2 bg-cardBackground border border-secondary/50 rounded-md shadow-sm focus:ring-primary focus:border-primary transition" placeholder="How can we help you?"></textarea>
+                        <textarea id="message" name="message" rows={6} value={message} onChange={(e) => setMessage(e.target.value)} required className="block w-full px-4 py-2 bg-cardBackground border border-secondary/50 rounded-md shadow-sm focus:ring-primary focus:border-primary transition" placeholder="Describe your project here."></textarea>
                     </div>
 
                     <div>

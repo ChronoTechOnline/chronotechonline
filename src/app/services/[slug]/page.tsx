@@ -2,6 +2,7 @@ import { getServiceBySlug, getServices } from '@/lib/services';
 import { notFound } from 'next/navigation';
 import { FiCheckCircle, FiExternalLink } from 'react-icons/fi';
 import { PiPuzzlePieceDuotone } from "react-icons/pi";
+import { FaWrench } from "react-icons/fa";
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -48,7 +49,6 @@ export default async function ServicePage({ params }: ServicePageProps) {
     return (
         <article className="max-w-4xl mx-auto px-6 py-12 md:py-20 prose prose-invert
                        prose-headings:text-primary prose-a:text-primary hover:prose-a:text-primaryHover">
-
             <h1 className="text-4xl md:text-5xl font-bold !mb-4">{service.name}</h1>
             <p className="text-2xl text-textSecondary !mt-0">{service.price}</p>
 
@@ -73,6 +73,20 @@ export default async function ServicePage({ params }: ServicePageProps) {
                         {service.addOns.map((item, index) => (
                             <li key={index} className="flex items-start !p-0">
                                 <PiPuzzlePieceDuotone className="text-primary h-6 w-6 mr-3 mt-1 flex-shrink-0" />
+                                <span>{item}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            )}
+
+            {service.maintenance && service.maintenance.length > 0 && (
+                <div className="mt-8 p-6 bg-cardBackground border border-secondary/30 rounded-lg">
+                    <h2 className="text-2xl font-bold !mt-0">Maintenance & Support</h2>
+                    <ul className="mt-4 space-y-2 !p-0">
+                        {service.maintenance.map((item, index) => (
+                            <li key={index} className="flex items-start !p-0">
+                                <FaWrench className="text-primary h-6 w-6 mr-3 mt-1 flex-shrink-0" />
                                 <span>{item}</span>
                             </li>
                         ))}
@@ -124,12 +138,22 @@ export default async function ServicePage({ params }: ServicePageProps) {
                     `}
                 </p>
                 <h3 className="mt-8 text-left text-3xl md:text-4xl font-bold text-textSecondary">
-                    Maintenance & Warranty
+                    Warranty
                 </h3>
                 <p className="text-left mt-4 text-lg text-textSecondary mx-auto whitespace-pre-line">
-                    {`All Projects come standard with a 2 month warranty that covers major issues and bugs. It does NOT include new features or content updates.
-                    All maintenance add-ons include monthly hours for minor updates and revisions and is priced based on complexity of the site.
-                    Major feature updates will be priced as add ons.
+                    {`All projects include a 1-month warranty starting from the launch date. This warranty covers major bugs or issues resulting from our development process. It does not include new feature development, design changes, or content updates. Any unauthorized changes made to the site by the client or a third party will void this warranty.
+                    `}
+                </p>
+                <h3 className="mt-8 text-left text-3xl md:text-4xl font-bold text-textSecondary">
+                    Maintenance & Support
+                </h3>
+                <p className="text-left mt-4 text-lg text-textSecondary mx-auto whitespace-pre-line">
+                    {`Monthly Maintenance includes:
+                    - 3 hours of work per month for minor content updates, design tweaks, and functionality testing.
+                    - Priority support with a guaranteed 2-3 business day response time.
+                    - Proactive maintenance checks to ensure your site is running smoothly.
+                    
+                    New features or major content updates will be priced as add-ons.
                     `}
                 </p>
             </div>

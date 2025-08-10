@@ -28,7 +28,6 @@ export default function AboutPage() {
                     </p>
                 </div>
                 <div className="w-full md:w-1/2">
-                    {/* Note: You will need to add an image at this path or update it */}
                     <Image
                         src="/images/Atlanta.png"
                         alt="A placeholder image representing the team or office"

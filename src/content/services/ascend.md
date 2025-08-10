@@ -1,31 +1,38 @@
 ---
 name: "Ascend"
 slug: "ascend"
-price: "Starting at $500"
+price: "Starting at $1,500"
 icon: "GiWingedSword"
 order: 1
 brief:
   - "Built on the Wix platform for easy user updates."
   - "Stunning, customized template design."
-  - "Create a fully mobile-responsive online presence."
-  - "Perfect for individuals and new businesses to showcase their work and contact information."
+  - "Optimized for Mobile."
+  - "Perfect for individuals and new businesses to showcase their work."
   - "Branded Header"
   - "Image Gallery"
   - "Contact Info/Socials Section"
   - "Branded Footer"
+  - "Built-in Wix Security & Admin Dashboard"
 addOns:
-  - "Additional static pages: +$200/page"
-  - "Additional dynamic pages: +$750/page"
-  - "Contact Form: +$300"
-  - "Wix Chat Plugin: +$125"
-  - "Wix Restaurant Plugin: +$500"
-  - "Wix Bookings Plugin: +$1,000"
-  - "Wix Members Plugin: +$500"
+  - "Additional static pages: +$300/page"
+  - "Additional dynamic pages: +$700/page"
+  - "Wix Forms: +$300"
+  - "Wix Chat Plugin: +300"
+  - "Wix AI Chat Plugin: +$1,000"
+  - "Wix Bookings Plugin: +$1,200"
+  - "Wix Members Plugin: +$1,200"
   - "Wix Premium/Custom Domain: Contact"
-  - "1-Year Maintenance: $500-$5,000/year"
+maintenance:
+  - "Month to Month Maintenance: $300/month"
+  - "Per Request Maintenance: $60/hr"                   
+  
 examples:
-  - name: "Swirl Cafe"
+  - name: "Ascend Basic"
+    url: "https://chronotechonline.wixsite.com/ascend-basic"
+  - name: "Ascend Restaurant"
     url: "https://chronotechonline.wixsite.com/swirl-cafe"
+
 ---
 
 Our **Ascend Site** comes standard as a 1-page static Wix website that includes a Logo, Headers, Footer, Gallery, and a Contact Info Section.

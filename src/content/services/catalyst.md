@@ -10,14 +10,18 @@ brief:
   - "Custom themes and branding."
   - "Built-in Shopify Admin Dashboard."
   - "Essential pages included (Home, About, Contact, FAQ, Policies)."
-  - "Configured payment gateways."
 addOns:
   - "Additional static pages: +$300/page"
+  - "Additional dynamic pages: +$700/page"
   - "Email Marketing: $700"
-  - "Print-on-Demand Integration: $1,000"
-  - "Loyalty Rewards: $700"
+  - "Loyalty Rewards: $1,000"
   - "Shopify Premium/Custom Domain: Contact"
-  - "1-Year Maintenance: $2,000-$5,000/yr"
+  - "Month to Month Maintenance: $300/month"
+  - "Per Request Maintenance: $60/hr"
+maintenance:
+  - "Month to Month Maintenance: $300/month"
+  - "Per Request Maintenance: $60/hr"
+  
 examples:
   - name: "Inkxev's Merch (Down for Maintenance)"
 
@@ -25,4 +29,4 @@ examples:
 
 Ready to start selling online? Our **Catalyst** package is designed to get your Shopify store up and running quickly and professionally. We handle all the technical details, from theme setup to payment integration, so you can focus on your products.
 
-We'll configure your store, upload your initial product line, and ensure your customers have a seamless checkout experience. This package is ideal for brands looking to make their first big splash in the world of e-commerce.
+We'll configure your store, upload your initial product line (up to 10 products), and ensure your customers have a seamless checkout experience. This package is ideal for brands looking to make their first big splash in the world of e-commerce.

@@ -12,6 +12,7 @@ export interface Service {
     order: number; // Added order property
     brief: string[];
     addOns?: string[];
+    maintenance?: string[];
     examples?: { name: string; url: string }[];
     content: string;
 }
