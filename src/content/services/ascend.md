@@ -1,7 +1,7 @@
 ---
 name: "Ascend"
 slug: "ascend"
-price: "Starting at $1,500"
+price: "Starting at $2,500"
 icon: "GiWingedSword"
 order: 1
 brief:
