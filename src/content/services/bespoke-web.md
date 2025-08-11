@@ -16,7 +16,7 @@ maintenance:
   - "Month to Month Maintenance: $500/month"
   - "Per Request Maintenance: $60/hr"
 examples:
-  - name: "Kevin' Portfolio"
+  - name: "Kevin's Portfolio"
     url: "https://kevlopez.tech"
   - name: "ChronoTech"
     url: "https://chronotech.online"
