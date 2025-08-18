@@ -31,7 +31,7 @@ examples:
   - name: "Ascend Basic"
     url: "https://chronotechonline.wixsite.com/ascend-basic"
   - name: "Ascend Restaurant"
-    url: "https://chronotechonline.wixsite.com/swirl-cafe"
+    url: "https://chronotechonline.wixsite.com/ascend-restaurant"
 
 ---
 

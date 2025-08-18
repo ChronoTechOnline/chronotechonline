@@ -1,7 +1,7 @@
 ---
 name: "Catalyst"
 slug: "catalyst"
-price: "Starting at $7,500"
+price: "Starting at $8,500"
 icon: "RiShoppingCartLine"
 order: 2
 brief:

@@ -5,7 +5,7 @@ import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import ServiceCard from './ServiceCard';
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import { type Service } from '@/lib/services'; // <-- FIX: Import the new Service type
+import { type Service } from '@/lib/services';
 
 interface ServicesCarouselProps {
     services: Service[]; // <-- FIX: Use the imported Service type
