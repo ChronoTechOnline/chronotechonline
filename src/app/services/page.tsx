@@ -27,7 +27,7 @@ export default function ServicesPage() {
                 <p className="text-left mt-4 text-lg text-textSecondary mx-auto whitespace-pre-line">
                     {`1. Contact
                     2. Introductory call to discuss your ideas and next steps!
-                    3. Detailed invoice and 25% deposit.
+                    3. Detailed proposal, invoice, and 50% deposit.
                     4. Project prototype, feedback, and final invoice.
                     5. Delivery, handoff, and maintenance.
                     `}
