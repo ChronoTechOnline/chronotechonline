@@ -6,6 +6,7 @@ import { type FormEvent } from 'react';
 export default function ContactPage() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
+    const [topic, setTopic] = useState('');
     const [message, setMessage] = useState('');
     const [status, setStatus] = useState('');
 
@@ -19,7 +20,7 @@ export default function ContactPage() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ name, email, message }),
+                body: JSON.stringify({ name, email, topic, message }),
             });
 
             const result = await response.json();
@@ -29,6 +30,7 @@ export default function ContactPage() {
                 setTimeout(() => {
                     setName('');
                     setEmail('');
+                    setTopic('');
                     setMessage('');
                     setStatus('');
                 }, 3000);
@@ -59,6 +61,24 @@ export default function ContactPage() {
                     <div>
                         <label htmlFor="email" className="block text-sm font-medium text-textSecondary mb-2">Email Address</label>
                         <input type="email" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required className="block w-full px-4 py-2 bg-cardBackground border border-secondary/50 rounded-md shadow-sm focus:ring-primary focus:border-primary transition" placeholder="you@example.com" />
+                    </div>
+                    <div>
+                        <label htmlFor="topic" className="block text-sm font-medium text-textSecondary mb-2">Which Service are you looking for?</label>
+                        <select
+                            id="topic"
+                            name="topic"
+                            value={topic}
+                            onChange={(e) => setTopic(e.target.value)}
+                            required
+                            className="block w-full px-4 py-2 bg-cardBackground border border-secondary/50 rounded-md shadow-sm focus:ring-primary focus:border-primary transition"
+                        >
+                            <option value="" disabled>Select a Service</option>
+                            <option value="Ascend">Ascend (Wix)</option>
+                            <option value="Catalyst">Catalyst (Shopify)</option>
+                            <option value="Bespoke Web">Bespoke Web</option>
+                            <option value="Bespoke Mobile">Bespoke Mobile</option>
+                            <option value="Unsure">Unsure</option>
+                        </select>
                     </div>
                     <div>
                         <label htmlFor="message" className="block text-sm font-medium text-textSecondary mb-2">Message</label>

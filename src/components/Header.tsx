@@ -69,7 +69,7 @@ export default function Header() {
 
     return (
         <>
-            <header className="fixed top-0 left-0 right-0 z-30 bg-background/80 backdrop-blur-md shadow-md">
+            <header className="fixed top-0 left-0 right-0 z-30 bg-background/60 backdrop-blur-md shadow-md">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-20">
                         <Link
@@ -125,7 +125,7 @@ export default function Header() {
                         />
                         <motion.div
                             key="mobile-drawer"
-                            className="fixed top-20 right-0 w-4/5 max-w-xs bg-cardBackground shadow-2xl p-4 z-50
+                            className="fixed top-20 right-0 w-4/5 max-w-xs bg-cardBackground/60 shadow-2xl p-4 z-50
                          flex flex-col rounded-l-2xl
                          max-h-[calc(100vh-5rem-2rem)] overflow-y-auto"
                             variants={drawerVariants}
