@@ -7,7 +7,7 @@ order: 2
 brief:
   - "Powered by Shopify's robust platform."
   - "Payment gateway & shipping configuration."
-  - "Custom themes and branding."
+  - "Custom design, themes, and branding."
   - "Built-in Shopify Admin Dashboard."
   - "Essential pages included (Home, About, Contact, FAQ, Policies)."
 addOns:

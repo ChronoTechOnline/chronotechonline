@@ -24,7 +24,7 @@ addOns:
   - "Wix Members Plugin: +$1,200"
   - "Wix Premium/Custom Domain: Contact"
 maintenance:
-  - "Month to Month Maintenance: $300/month"
+  - "Month to Month Maintenance: $200/month"
   - "Per Request Maintenance: $60/hr"                   
   
 examples:

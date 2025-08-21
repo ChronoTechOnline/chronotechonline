@@ -13,7 +13,7 @@ addOns:
   - "Contact Form: +$2,000"
   - "More add-ons coming soon."
 maintenance:
-  - "Month to Month Maintenance: $500/month"
+  - "Month to Month Maintenance: Starting at $500/month"
   - "Per Request Maintenance: $60/hr"
 examples:
   - name: "Kevin's Portfolio"
