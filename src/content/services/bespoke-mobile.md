@@ -1,20 +1,20 @@
 ---
 name: "Bespoke Mobile"
 slug: "bespoke-mobile"
-price: "Starting at $15,000"
+price: "Starting at $20,000"
 icon: "AiOutlineMobile"
 order: 4
 brief:
   - "Android Apps only, iOS Apps coming soon."
   - "Developed entirely from scratch using React Native to deliver a seamless and engaging user experience."
 addOns:
-  - "Advertising: +$2,000"
-  - "In-App Purchases: +$5,000"
+  - "Advertising: +$3,000"
+  - "In-App Purchases: +$8,000"
   - "API Integration: Contact"
   - "More add-ons coming soon."
 maintenance:
     - "Month to Month Maintenance: Starting at $500/month"
-    - "Per Request Maintenance: $60/hr"
+    - "Per Request Maintenance: $120/hr"
 examples:
   - name: "CafeCalc on Google Play"
     url: "https://play.google.com/store/apps/details?id=com.chronotech.CafeCalc"

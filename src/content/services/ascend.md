@@ -1,31 +1,31 @@
 ---
 name: "Ascend"
 slug: "ascend"
-price: "Starting at $2,500"
+price: "Starting at $1,000"
 icon: "GiWingedSword"
 order: 1
 brief:
-  - "Built on the Wix platform for easy user updates."
-  - "Stunning, customized template design."
-  - "Optimized for Mobile."
-  - "Perfect for individuals and new businesses to showcase their work."
+  - "Built on the Wix platform."
+  - "Stunning, customized, and responsive design."
+  - "Mobile Optimization"
   - "Branded Header"
   - "Image Gallery"
-  - "Contact Info/Socials Section"
+  - "Contact Form"
+  - "Social Media Links"
   - "Branded Footer"
   - "Built-in Wix Security & Admin Dashboard"
 addOns:
   - "Additional static pages: +$300/page"
   - "Additional dynamic pages: +$700/page"
-  - "Wix Forms: +$300"
+  - "Wix Forms: +$120/form"
   - "Wix Chat Plugin: +300"
-  - "Wix AI Chat Plugin: +$1,000"
-  - "Wix Bookings Plugin: +$1,200"
-  - "Wix Members Plugin: +$1,200"
+  - "Wix AI Chat Plugin: +$750"
+  - "Wix Bookings Plugin: +$1,500"
+  - "Wix Members Plugin: +$1,500"
   - "Wix Premium/Custom Domain: Contact"
 maintenance:
   - "Month to Month Maintenance: $200/month"
-  - "Per Request Maintenance: $60/hr"                   
+  - "Per Request Maintenance: $70/hr"                   
   
 examples:
   - name: "Ascend Basic"
@@ -35,6 +35,6 @@ examples:
 
 ---
 
-Our **Ascend Site** comes standard as a 1-page static Wix website that includes a Logo, Headers, Footer, Gallery, and a Contact Info Section.
+Our **Ascend Site** comes standard as a 1-page static Wix website that includes a Logo, Headers, Footer, Gallery, Contact Info, and Socials.
 
 Add-ons are available and priced based on complexity and are not limited to the ones listed here.

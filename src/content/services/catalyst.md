@@ -20,7 +20,7 @@ addOns:
   - "Per Request Maintenance: $60/hr"
 maintenance:
   - "Month to Month Maintenance: $300/month"
-  - "Per Request Maintenance: $60/hr"
+  - "Per Request Maintenance: $120/hr"
   
 examples:
   - name: "Inkxev's Merch (Down for Maintenance)"

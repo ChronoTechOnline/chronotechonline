@@ -78,12 +78,12 @@ export default function Header() {
                         >
                             <Image
                                 src="/images/ChronoTechLogo.png"
-                                alt="Your Business Name Logo"
-                                width={32}
-                                height={32}
-                                className="h-8 w-8"
+                                alt="Chrono Tech Logo"
+                                width={64}
+                                height={64}
+                                className="h-20 w-20"
                             />
-                            ChronoTechOnline
+                            Chrono Tech Online
                         </Link>
 
                         <nav className="hidden md:flex items-center space-x-8">

@@ -1,7 +1,7 @@
 ---
 name: "Bespoke Web"
 slug: "bespoke-web"
-price: "Starting at $15,000"
+price: "Starting at $20,000"
 icon: "LuLaptopMinimal"
 order: 3
 brief:
@@ -9,12 +9,14 @@ brief:
   - "Custom coded from the ground up using React"
   - "Blazing-fast performance with Next.js."
   - "Advanced animations & interactions."
+  - "Fully customizable."
 addOns:
   - "Contact Form: +$2,000"
+  - "Custom Domain: Contact"
   - "More add-ons coming soon."
 maintenance:
   - "Month to Month Maintenance: Starting at $500/month"
-  - "Per Request Maintenance: $60/hr"
+  - "Per Request Maintenance: $120/hr"
 examples:
   - name: "Kevin's Portfolio"
     url: "https://kevlopez.tech"
